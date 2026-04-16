@@ -1,0 +1,46 @@
+---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
+import "../styles/global.css";
+const { title } = Astro.props;
+const LINKS = [
+  { name: "Inicio", href: "/" },
+  { name: "Nosotros", href: "/nosotros" },
+  { name: "Contacto", href: "/contacto" },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="">
+    <div class="grid min-h-screen grid-rows-[auto_1fr_auto]">
+      <header
+        class="sticky top-0 z-50 bg-white backdrop-blur-md flex justify-between items-center px-5 lg:px-10 py-4"
+      >
+        <h2 class="font-bold text-2xl">IVATAM</h2>
+        <nav class="flex gap-5">
+          {
+            LINKS.map((link) => (
+              <a
+                class="font-semibold uppercase hover:text-gray-500"
+                href={link.href}
+              >
+                {link.name}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="bg-gray-800 text-white px-5 lg:px-10 py-4">
+        <p>footer</p>
+      </footer>
+    </div>
+  </body>
+</html>

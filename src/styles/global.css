@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@theme {
+  /* Mapeamos la fuente instalada a la variable sans de Tailwind */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Si instalaste otra para títulos, puedes crear una variable nueva */
+  --font-display: "Roboto", sans-serif;
+}
