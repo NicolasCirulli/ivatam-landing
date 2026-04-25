@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# IVATAM - Repuestos y Servicio Técnico
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Landing page de alto rendimiento para **IVATAM**, negocio especializado en la venta de repuestos y servicio técnico de tren delantero, frenos y embrague, ubicado en Ezpeleta, Buenos Aires.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este sitio ha sido diseñado como una **Single-Page Landing** optimizada para la conversión, con un enfoque agresivo en el **SEO Local** y una experiencia de usuario (UX) pulida y minimalista.
 
-## 🚀 Project Structure
+## 🚀 Tecnologías Utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro 6.0+**: Framework web para la máxima velocidad de carga.
+- **Tailwind CSS 4.0**: Estilos utilitarios de última generación para un diseño moderno y responsivo.
+- **TypeScript**: Para un desarrollo robusto y tipado.
+- **Google Maps API (Embed)**: Localización en tiempo real con carga perezosa.
+- **JSON-LD Schema**: Marcado estructurado para Google (LocalBusiness & FAQPage).
+
+## 🛠️ Características Principales
+
+- **Arquitectura Single-Page**: Navegación fluida por anclas para evitar recargas.
+- **Optimización SEO**: Meta tags dinámicos, Open Graph para redes sociales y jerarquía semántica completa.
+- **Carrusel de Marcas**: Animación CSS pura (zero JS) para mostrar marcas asociadas.
+- **Sección FAQ**: Preguntas frecuentes con HTML nativo para mejorar el posicionamiento orgánico.
+- **Performance**: Puntuaciones altas en Core Web Vitals gracias al renderizado estático de Astro.
+
+## 📁 Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/              # Assets estáticos (logos, imágenes de stock)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/      # Componentes modulares (Hero, Services, SEO, etc.)
+│   ├── layouts/         # Layout principal con Flexbox y SEO inyectado
+│   ├── pages/           # Página principal (index.astro)
+│   └── styles/          # Estilos globales y animaciones de Tailwind
+├── STATUS.md            # Documentación del estado del proyecto y tareas pendientes
+└── package.json         # Dependencias y scripts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ⚙️ Comandos del Desarrollador
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Comando | Acción |
+| :--- | :--- |
+| `npm run dev` | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build` | Genera la versión de producción en `./dist/` |
+| `npm run preview` | Previsualiza el build de producción localmente |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚧 Pendientes para Producción
 
-## 🧞 Commands
+Consultar el archivo `STATUS.md` para ver la lista detallada de tareas, que incluyen:
+- Reemplazo de imágenes de stock por reales.
+- Actualización de números de contacto (WhatsApp/Teléfono).
+- Verificación en Google Business Profile.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Desarrollado con foco en el rendimiento y el SEO Local. 🛠️🚗
