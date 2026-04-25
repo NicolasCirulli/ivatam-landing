@@ -1,0 +1,71 @@
+---
+const faqs = [
+  {
+    question: "¿Qué marcas de repuestos trabajan?",
+    answer: "Trabajamos únicamente con primeras marcas reconocidas por su calidad y durabilidad, como Corven, LUK, Valeo, Monroe, SKF, Fric-Rot, Sachs y TRW, garantizando el mejor rendimiento para tu vehículo."
+  },
+  {
+    question: "¿Dónde están ubicados?",
+    answer: "Nos encontramos en Calle Santa Cruz 711, Ezpeleta, Buenos Aires. Podés acercarte a nuestro local de lunes a viernes de 8:00 a 18:00 hs para asesoramiento presencial."
+  },
+  {
+    question: "¿Hacen servicio técnico además de vender repuestos?",
+    answer: "Sí, somos especialistas integrales. No solo te proveemos el repuesto exacto que necesitás, sino que también realizamos la instalación, revisión y servicio técnico completo de frenos, embrague y tren delantero."
+  },
+  {
+    question: "¿Qué medios de pago aceptan?",
+    answer: "Aceptamos efectivo, transferencias bancarias y tarjetas. Consultanos por WhatsApp para conocer las promociones y opciones de financiación vigentes."
+  }
+];
+
+// Schema Markup de FAQPage para fragmentos destacados de Google
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section id="faq" class="py-24 px-5 lg:px-10 bg-slate-50 text-slate-900 border-b border-slate-200">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold mb-4">Preguntas Frecuentes</h2>
+      <p class="text-lg text-slate-600">Resolvemos tus dudas principales para que confíes en nuestro servicio.</p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {faqs.map((faq) => (
+        <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm open:shadow-md transition-shadow">
+          <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none hover:text-emerald-700 transition-colors">
+            {faq.question}
+            <span class="transition group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+  
+  <!-- Schema Inyectado Invisible para Google -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</section>
+
+<style>
+  /* Ocultar la flecha por defecto del <details> en Safari/Chrome/Firefox */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

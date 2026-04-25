@@ -1,0 +1,68 @@
+---
+// Configuración de marcas (Placeholder)
+// Edita este array cuando tengas las marcas reales.
+// Si usas imágenes locales, colócalas en public/ y referéncialas (ej: '/marca1.svg').
+const BRANDS = [
+  {
+    name: "Corven",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "LUK",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "Valeo",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "Monroe",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "SKF",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "Fric-Rot",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "Sachs",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+  {
+    name: "TRW",
+    logoUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+  },
+];
+
+// Duplicamos el array para lograr el efecto infinito sin cortes
+const CAROUSEL_ITEMS = [...BRANDS];
+---
+
+<section class="w-full bg-white border-y border-slate-200 py-6 overflow-hidden">
+  <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+    {
+      CAROUSEL_ITEMS.map((brand, index) => (
+        <div class="flex items-center justify-center px-8 lg:px-16 w-48 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+          <img
+            src={brand.logoUrl}
+            alt={`Logo de la marca ${brand.name}`}
+            class="h-10 lg:h-12 w-auto object-contain pointer-events-none"
+            loading="lazy"
+          />
+          <span class="sr-only">{brand.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>

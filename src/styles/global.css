@@ -6,3 +6,18 @@
   /* Si instalaste otra para títulos, puedes crear una variable nueva */
   --font-display: "Roboto", sans-serif;
 }
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
