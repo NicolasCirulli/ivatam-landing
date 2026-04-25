@@ -4,60 +4,48 @@
 // Si usas imágenes locales, colócalas en public/ y referéncialas (ej: '/marca1.svg').
 const BRANDS = [
   {
-    name: "Corven",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Peugeot",
+    logoUrl: "peugeot.png",
   },
   {
-    name: "LUK",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Renault",
+    logoUrl: "renault.png",
   },
   {
-    name: "Valeo",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Fiat",
+    logoUrl: "fiat.png",
   },
   {
-    name: "Monroe",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Toyota",
+    logoUrl: "toyota.png",
   },
   {
-    name: "SKF",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Chevrolet",
+    logoUrl: "chevrolet.png",
   },
   {
-    name: "Fric-Rot",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Ford",
+    logoUrl: "ford.png",
   },
   {
-    name: "Sachs",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
-  },
-  {
-    name: "TRW",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Placeholder_logo.svg",
+    name: "Volkswagen",
+    logoUrl: "volkswagen.png",
   },
 ];
 
-// Duplicamos el array para lograr el efecto infinito sin cortes
-const CAROUSEL_ITEMS = [...BRANDS];
+// Duplicamos el array varias veces para lograr el efecto infinito sin cortes en pantallas grandes
+const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
 ---
 
 <section class="w-full bg-white border-y border-slate-200 py-6 overflow-hidden">
   <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
     {
       CAROUSEL_ITEMS.map((brand, index) => (
-        <div class="flex items-center justify-center px-8 lg:px-16 w-48 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+        <div class="flex items-center justify-center px-8 lg:px-16 w-48 shrink-0 transition-all duration-300">
           <img
             src={brand.logoUrl}
             alt={`Logo de la marca ${brand.name}`}
-            class="h-10 lg:h-12 w-auto object-contain pointer-events-none"
+            class="h-12 lg:h-12 w-12 object-contain pointer-events-none"
             loading="lazy"
           />
           <span class="sr-only">{brand.name}</span>
