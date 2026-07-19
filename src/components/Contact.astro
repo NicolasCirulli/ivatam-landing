@@ -1,4 +1,5 @@
 ---
+import { SITE } from "../config/site";
 ---
 
 <section id="contacto" class="py-24 px-5 lg:px-10 bg-white text-slate-900">
@@ -9,12 +10,10 @@
     </p>
     
     <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-      <!-- TODO: Reemplazar '1234567890' con el número de WhatsApp real (código de país sin el '+', ej: 54911...) -->
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold py-4 px-8 rounded-lg shadow-md hover:bg-emerald-700 hover:shadow-lg transition-all w-full sm:w-auto">
+      <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold py-4 px-8 rounded-lg shadow-md hover:bg-emerald-700 hover:shadow-lg transition-all w-full sm:w-auto">
         Escribir por WhatsApp
       </a>
-      <!-- TODO: Reemplazar '+1234567890' con el número de teléfono real -->
-      <a href="tel:+1234567890" class="bg-slate-100 text-slate-800 border border-slate-300 font-bold py-4 px-8 rounded-lg hover:bg-slate-200 transition-colors w-full sm:w-auto">
+      <a href={SITE.phoneTel} class="bg-slate-100 text-slate-800 border border-slate-300 font-bold py-4 px-8 rounded-lg hover:bg-slate-200 transition-colors w-full sm:w-auto">
         Llamar por Teléfono
       </a>
     </div>
@@ -31,9 +30,9 @@
     </div>
     
     <div class="mt-6 text-slate-600">
-      <p class="font-bold text-xl text-slate-800">Calle Santa Cruz 710</p>
-      <p class="text-md mt-1">Ezpeleta, Buenos Aires, Argentina</p>
-      <p class="text-sm mt-2 text-slate-500">Lunes a Viernes de 8:00 a 18:00 hs</p>
+      <p class="font-bold text-xl text-slate-800">{SITE.address}</p>
+      <p class="text-base mt-1">{SITE.city}, {SITE.province}, {SITE.country}</p>
+      <p class="text-sm mt-2 text-slate-500">{SITE.hours}</p>
     </div>
   </div>
 </section>

@@ -1,4 +1,6 @@
 ---
+import { SITE } from "../config/site";
+
 interface Props {
   title?: string;
   description?: string;
@@ -11,30 +13,30 @@ const {
   image = "/hero_stock.webp", // Esta imagen debería ser tu logo o la fachada de tu local más adelante
 } = Astro.props;
 
-// Construimos la URL canónica
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://ivatam-repuestos.com"); // Reemplazar con dominio final
+// Construimos la URL canónica (el dominio se toma de `site` en astro.config.mjs)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || SITE.domain);
 
 // Schema Org para Negocio Local
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["AutoPartsStore", "AutoRepair"],
-  "name": "IVATAM",
+  "name": SITE.name,
   "image": new URL(image, canonicalURL).toString(),
   "@id": canonicalURL.toString(),
   "url": canonicalURL.toString(),
-  "telephone": "+541112345678", // Reemplazar con real
+  "telephone": SITE.schemaPhone,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle Santa Cruz 710",
-    "addressLocality": "Ezpeleta",
-    "addressRegion": "Buenos Aires",
-    "postalCode": "1882",
+    "streetAddress": SITE.address,
+    "addressLocality": SITE.city,
+    "addressRegion": SITE.province,
+    "postalCode": SITE.postalCode,
     "addressCountry": "AR"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": -34.743194, // Reemplazar con coord exactas luego
-    "longitude": -58.238472
+    "latitude": SITE.geo.lat,
+    "longitude": SITE.geo.lng
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -55,7 +57,9 @@ const localBusinessSchema = {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
 <meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#020617" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -72,6 +76,8 @@ const localBusinessSchema = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, canonicalURL)} />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content={SITE.name} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
