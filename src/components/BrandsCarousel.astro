@@ -2,34 +2,36 @@
 const BRANDS = [
   {
     name: "Peugeot",
-    logoUrl: "Peugeot.svg",
+    logoUrl: "/Peugeot.svg",
   },
   {
     name: "Renault",
-    logoUrl: "Renault.svg",
+    logoUrl: "/Renault.svg",
   },
   {
     name: "Fiat",
-    logoUrl: "Fiat.svg",
+    logoUrl: "/Fiat.svg",
   },
   {
     name: "Toyota",
-    logoUrl: "Toyota.svg",
+    logoUrl: "/Toyota.svg",
   },
   {
     name: "Chevrolet",
-    logoUrl: "Chevrolet.svg",
+    logoUrl: "/Chevrolet.svg",
   },
   {
     name: "Ford",
-    logoUrl: "Ford.svg",
+    logoUrl: "/Ford.svg",
   },
   {
     name: "Volkswagen",
-    logoUrl: "Volkswagen.svg",
+    logoUrl: "/Volkswagen.svg",
   },
 ];
 
+// Los ítems se repiten para lograr el loop infinito del marquee.
+// Las copias duplicadas se ocultan de los lectores de pantalla (aria-hidden).
 const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
 ---
 
@@ -37,14 +39,16 @@ const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
   <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
     {
       CAROUSEL_ITEMS.map((brand, index) => (
-        <div class="flex items-center justify-center px-8 lg:px-16 w-48 shrink-0 transition-all duration-300">
+        <div
+          class="flex items-center justify-center px-8 lg:px-16 w-48 shrink-0 transition-all duration-300"
+          aria-hidden={index >= BRANDS.length ? "true" : undefined}
+        >
           <img
             src={brand.logoUrl}
             alt={`Logo de la marca ${brand.name}`}
             class="h-12 lg:h-12 w-12 object-contain pointer-events-none"
             loading="lazy"
           />
-          <span class="sr-only">{brand.name}</span>
         </div>
       ))
     }
