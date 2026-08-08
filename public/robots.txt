@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ivatam-repuestos.com/sitemap-index.xml
+Sitemap: https://ivatam.netlify.app/sitemap-index.xml

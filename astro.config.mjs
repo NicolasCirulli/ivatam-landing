@@ -5,8 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: reemplazar por el dominio final cuando esté disponible
-  site: "https://ivatam-repuestos.com",
+  site: "https://ivatam.netlify.app",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

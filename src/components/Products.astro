@@ -12,12 +12,18 @@ const products = [
       <h2 class="text-4xl font-extrabold mb-4">Repuestos de Primeras Marcas</h2>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">Trabajamos con componentes de alta calidad para asegurar durabilidad y confiabilidad.</p>
     </div>
-    <ul class="flex flex-wrap justify-center gap-4 list-none p-0">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 list-none p-0">
       {products.map(p => (
-        <li class="bg-white px-6 py-3 rounded-full border border-slate-200 font-semibold text-slate-700 shadow-sm hover:border-slate-400 hover:text-slate-900 transition-colors cursor-default">
-          {p}
+        <li class="flex items-center gap-3 bg-white px-5 py-4 rounded-xl border border-slate-200 font-semibold text-slate-700 shadow-sm">
+          <span class="text-emerald-600" aria-hidden="true">✓</span> {p}
         </li>
       ))}
     </ul>
+    <div class="mt-10 text-center">
+      <p class="mb-4 text-slate-600">¿Buscás otra pieza o necesitás confirmar compatibilidad?</p>
+      <a href="#contacto" class="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 font-bold text-slate-800 transition-colors hover:border-emerald-600 hover:text-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
+        Consultar disponibilidad
+      </a>
+    </div>
   </div>
 </section>

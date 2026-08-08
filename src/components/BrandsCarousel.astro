@@ -30,13 +30,13 @@ const BRANDS = [
   },
 ];
 
-// Los ítems se repiten para lograr el loop infinito del marquee.
-// Las copias duplicadas se ocultan de los lectores de pantalla (aria-hidden).
-const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
+// Una segunda copia alcanza para lograr el loop infinito del marquee.
+// Las copias se ocultan de los lectores de pantalla.
+const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS];
 ---
 
-<section class="w-full bg-white border-y border-slate-200 py-6 overflow-hidden">
-  <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+<section class="w-full bg-white border-y border-slate-200 py-6 overflow-hidden" aria-label="Marcas de vehículos con las que trabajamos">
+  <div class="brands-track flex w-max animate-marquee hover:[animation-play-state:paused]">
     {
       CAROUSEL_ITEMS.map((brand, index) => (
         <div
@@ -48,6 +48,8 @@ const CAROUSEL_ITEMS = [...BRANDS, ...BRANDS, ...BRANDS, ...BRANDS];
             alt={`Logo de la marca ${brand.name}`}
             class="h-12 lg:h-12 w-12 object-contain pointer-events-none"
             loading="lazy"
+            width="48"
+            height="48"
           />
         </div>
       ))
