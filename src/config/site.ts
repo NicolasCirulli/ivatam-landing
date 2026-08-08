@@ -2,21 +2,18 @@
  * Datos centrales del negocio.
  * ÚNICA fuente de verdad para contacto, dirección y SEO.
  *
- * ⚠️ PENDIENTE PARA PRODUCCIÓN: reemplazar los valores marcados con TODO
- * (WhatsApp, teléfono, coordenadas y dominio) por los datos reales.
+ * Mantener estos datos actualizados: se reutilizan en contacto, footer y SEO.
  */
 export const SITE = {
   name: "IVATAM",
-  // TODO: dominio final (debe coincidir con `site` en astro.config.mjs)
-  domain: "https://ivatam-repuestos.com",
+  // Dominio público actual (debe coincidir con `site` en astro.config.mjs)
+  domain: "https://ivatam.netlify.app",
 
-  // TODO: número de WhatsApp real (código de país sin '+', ej: 54911...)
-  whatsapp: "https://wa.me/1234567890",
-  // TODO: número de teléfono real
-  phoneTel: "tel:+1234567890",
-  phoneDisplay: "Teléfono (Agregar Número)",
-  // TODO: teléfono real para Schema.org (formato internacional, ej: +54 11 ...)
-  schemaPhone: "+541112345678",
+  whatsapp:
+    "https://wa.me/5491124566395?text=Hola%20IVATAM%2C%20quisiera%20consultar%20por%20un%20repuesto%20o%20servicio.",
+  phoneTel: "tel:+541124566395",
+  phoneDisplay: "+54 11 2456-6395",
+  schemaPhone: "+541124566395",
 
   address: "Calle Santa Cruz 710",
   city: "Ezpeleta",
@@ -25,9 +22,6 @@ export const SITE = {
   postalCode: "1882",
   hours: "Lunes a Viernes de 8:00 a 18:00 hs",
 
-  // TODO: coordenadas exactas del local
-  geo: {
-    lat: -34.743194,
-    lng: -58.238472,
-  },
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Calle%20Santa%20Cruz%20710%2C%20Ezpeleta%2C%20Buenos%20Aires%2C%20Argentina",
 } as const;

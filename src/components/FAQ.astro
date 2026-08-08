@@ -53,7 +53,7 @@ const faqSchema = {
       {
         faqs.map((faq) => (
           <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm open:shadow-md transition-shadow">
-            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none hover:text-emerald-700 transition-colors">
+            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-6 list-none hover:text-emerald-700 transition-colors focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-emerald-600">
               {faq.question}
               <span class="transition group-open:rotate-180">
                 <svg

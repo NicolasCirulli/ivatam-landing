@@ -20,8 +20,34 @@
 
   /* Accesibilidad: pausar animaciones si el usuario prefiere menos movimiento */
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+
     .animate-marquee {
       animation: none;
     }
+
+    .brands-track {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .brands-track > [aria-hidden="true"] {
+      display: none;
+    }
   }
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }

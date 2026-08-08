@@ -8,9 +8,9 @@ interface Props {
 }
 
 const {
-  title = "Ivatam | Repuestos de Tren Delantero, Frenos y Embrague en Ezpeleta",
-  description = "Especialistas en repuestos de tren delantero, frenos y suspensión en Ezpeleta y Quilmes. Servicio técnico de confianza, primeras marcas y asesoramiento personalizado.",
-  image = "/hero_stock.webp", // Esta imagen debería ser tu logo o la fachada de tu local más adelante
+  title = "IVATAM | Repuestos y Taller Automotor en Ezpeleta",
+  description = "Repuestos y servicio técnico de frenos, suspensión, tren delantero y embrague en Ezpeleta. Primeras marcas, asesoramiento personalizado e instalación.",
+  image = "/og.png",
 } = Astro.props;
 
 // Construimos la URL canónica (el dominio se toma de `site` en astro.config.mjs)
@@ -32,11 +32,6 @@ const localBusinessSchema = {
     "addressRegion": SITE.province,
     "postalCode": SITE.postalCode,
     "addressCountry": "AR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": SITE.geo.lat,
-    "longitude": SITE.geo.lng
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -76,15 +71,19 @@ const localBusinessSchema = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, canonicalURL)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="IVATAM, repuestos y taller automotor en Ezpeleta" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content={SITE.name} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, canonicalURL)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, canonicalURL)} />
+<meta name="twitter:image:alt" content="IVATAM, repuestos y taller automotor en Ezpeleta" />
 
 <!-- Schema Markup: LocalBusiness -->
 <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

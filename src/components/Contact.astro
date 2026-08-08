@@ -9,16 +9,19 @@ import { SITE } from "../config/site";
       Visítanos en nuestro local o comunícate directamente por WhatsApp para consultas de stock, presupuestos o turnos para el taller.
     </p>
     
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-      <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" class="bg-emerald-600 text-white font-bold py-4 px-8 rounded-lg shadow-md hover:bg-emerald-700 hover:shadow-lg transition-all w-full sm:w-auto">
-        Escribir por WhatsApp
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
+      <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp, se abre en una pestaña nueva" class="flex min-h-14 items-center justify-center bg-emerald-600 text-white font-bold py-4 px-6 rounded-lg shadow-md hover:bg-emerald-700 hover:shadow-lg transition-all w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700">
+        Consultar por WhatsApp
       </a>
-      <a href={SITE.phoneTel} class="bg-slate-100 text-slate-800 border border-slate-300 font-bold py-4 px-8 rounded-lg hover:bg-slate-200 transition-colors w-full sm:w-auto">
-        Llamar por Teléfono
+      <a href={SITE.phoneTel} class="flex min-h-14 items-center justify-center bg-slate-100 text-slate-800 border border-slate-300 font-bold py-4 px-6 rounded-lg hover:bg-slate-200 transition-colors w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700">
+        Llamar al {SITE.phoneDisplay}
+      </a>
+      <a href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer" aria-label="Abrir indicaciones en Google Maps, se abre en una pestaña nueva" class="flex min-h-14 items-center justify-center bg-white text-slate-800 border border-slate-300 font-bold py-4 px-6 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-colors w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">
+        Cómo llegar
       </a>
     </div>
 
-    <div class="bg-slate-100 h-[400px] w-full rounded-xl flex items-center justify-center border border-slate-200 shadow-inner overflow-hidden relative">
+    <div class="bg-slate-100 h-[320px] lg:h-[400px] w-full rounded-xl flex items-center justify-center border border-slate-200 shadow-inner overflow-hidden relative">
       <iframe 
         src="https://maps.google.com/maps?q=Calle%20Santa%20Cruz%20710,%20Ezpeleta,%20Buenos%20Aires,%20Argentina&t=&z=15&ie=UTF8&iwloc=&output=embed" 
         class="absolute top-0 left-0 w-full h-full border-0" 
@@ -33,6 +36,7 @@ import { SITE } from "../config/site";
       <p class="font-bold text-xl text-slate-800">{SITE.address}</p>
       <p class="text-base mt-1">{SITE.city}, {SITE.province}, {SITE.country}</p>
       <p class="text-sm mt-2 text-slate-500">{SITE.hours}</p>
+      <p class="text-sm mt-2"><a class="font-semibold text-emerald-700 hover:underline" href={SITE.phoneTel}>{SITE.phoneDisplay}</a></p>
     </div>
   </div>
 </section>
