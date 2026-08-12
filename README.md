@@ -42,12 +42,3 @@ Este sitio ha sido diseñado como una **Single-Page Landing** optimizada para la
 | `npm run build` | Genera la versión de producción en `./dist/` |
 | `npm run preview` | Previsualiza el build de producción localmente |
 
-## 🚧 Pendientes para Producción
-
-Consultar el archivo `STATUS.md` para ver la lista detallada de tareas, que incluyen:
-- Reemplazo de imágenes de stock por reales.
-- Actualización de números de contacto (WhatsApp/Teléfono).
-- Verificación en Google Business Profile.
-
----
-Desarrollado con foco en el rendimiento y el SEO Local. 🛠️🚗
